@@ -25,11 +25,13 @@ int walk(const char *path) {
       continue;
     }
     if (dp->d_type == DT_DIR) {
-      print_file(name, 0);
+      print_file(name, 1);
+
+      size_t len = strlen(path) + strlen(name) + 2;
     }
     //
     else {
-      print_file(name, 1);
+      print_file(name, 0);
     }
   }
   closedir(dir);
